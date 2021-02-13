@@ -2,5 +2,21 @@
   "name": "omegasisters-overhaul",
   "version": "0.0.1",
   "repository": "git@github.com:ookam/omegasisters-overhaul.git",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "browser-sync": "^2.26.14",
+    "css-loader": "^5.0.2",
+    "css-minimizer-webpack-plugin": "^1.2.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.0",
+    "postcss-loader": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^11.0.1",
+    "tailwindcss": "^2.0.3",
+    "terser-webpack-plugin": "^5.1.1",
+    "yarn-run-all": "^3.1.1"
+  }
 }
