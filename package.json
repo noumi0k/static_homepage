@@ -2,7 +2,6 @@
   "name": "omegasisters-overhaul",
   "version": "0.0.1",
   "repository": "git@github.com:ookam/omegasisters-overhaul.git",
-  "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
     "start": "NODE_ENV=development npm-run-all clean build:development:webpack --parallel dev:webpack-dev-server dev:eleventy dev:open-browser",
