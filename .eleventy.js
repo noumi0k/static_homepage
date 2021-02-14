@@ -35,8 +35,7 @@ module.exports = (eleventyConfig) => {
   // njkを読み込む
   let nunjucksEnvironment = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
-      'src/app/_includes/layouts',
-      'src/app/_includes/components',
+      'src/app/_includes',
     ])
   );
 

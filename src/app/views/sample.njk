@@ -1,4 +1,4 @@
-{% extends "default.njk" %}
+{% extends "layouts/default_layout.njk" %}
 {%-
   set meta_tags = {
     title: "",
@@ -16,11 +16,10 @@
   <p>
     ↓これは画像のサンプルです
   </p>
-  <img src="{{ '/images/fish.svg' | url }}" class='block w-40 h-40'>
-
+  <img src="{{ '/images/fish.svg' | url }}" class="block w-40 h-40" />
 
   <p>
     ↓これはコンポーネントのサンプルです
   </p>
-  {%- include "sample.njk" -%}
+  {%- include "components/sample_component.njk" -%}
 {% endblock %}
