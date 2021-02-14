@@ -1,4 +1,4 @@
-name: when push or pull_request master , auto release
+name: when push or pull_request master , auto release github page
 on:
   push:
     branches: [ $default-branch ]
