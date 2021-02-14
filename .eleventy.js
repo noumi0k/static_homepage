@@ -58,10 +58,7 @@ module.exports = (eleventyConfig) => {
   );
 
   return {
-    // MEMO: githubのリポジトリ名を設定する
-    // http://URL/___/
-    // 「___」ここの部分
-    pathPrefix: "/omegasisters-overhaul",
+    pathPrefix: `/${path.basename(process.env.npm_package_repository_url, '.git')}`,
     // 出力先のディレクトリ
     dir: {
       // メインで開発していくディレクトリ

@@ -97,7 +97,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new WebpackAssetsManifest({
-        publicPath: isProduction ? '/packs/' : 'http://localhost:3035/packs/',
+        publicPath: isProduction ? `/${path.basename(process.env.npm_package_repository_url, '.git')}/packs/` : 'http://localhost:3035/packs/',
         writeToFileEmit: true,
         fileName: 'manifest.json',
       }),

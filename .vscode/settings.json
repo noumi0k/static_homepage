@@ -4,6 +4,7 @@
     "haml",
     "mixins",
     "noarchive",
+    "omegasisters",
     "shortcode",
     "weppack"
   ]
