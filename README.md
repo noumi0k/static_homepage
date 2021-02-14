@@ -1,46 +1,29 @@
-# みんなでつくろう「おめシスホームページ」……のオーバーホールを目的としたリポジトリです
+# 静的なHPを一瞬で作ってgithubにpush出来るやつです
 
-https://omegasisters.github.io/homepage
+- テンプレも細かい設定も要らねえ、tailwindとscssがサクッと使えて、ヘッダーとかフッターを共通化出来ればそれで充分なんだ！！サーバーのレンタルもしたくねえ！！github pageに勝手に公開してくれ！！！
 
-> みんなでつくろう「おめシスホームページ」という企画で作られたリポジトリ（ https://github.com/omegasisters/homepage ）がライセンス未規定につき（誰も訴えないとは思うけど）著作権的にリスキーになっているので0からオーバーホールをしてリスクを消したい
-
-という気持ちで作ったプロジェクト。ついでに技術周りの刷新もしてみます。本家に取り込まれるかは分からないので、完成してから本家でissueを立ててみるつもり。
-
-
-## 現状のツラミ
-
-- ライセンス規定が無いからソースコードをいじるのに常にリスクが伴う
-
-- みんなが自由に技術を入れているのでカオス
-
-
-## こうしたい
-
-- MITライセンスを標準搭載（要は、ここに投稿されたソースコードは誰でも何にでも使えるよ〜というもの）
-
-- 技術周りをとりあえず一本化したい
-
-
-## 元のリポジトリに手を入れない理由は？
-
-元のリポジトリを改善する方向性の場合、新しく書き換えたファイル（MITライセンス）と元から残っている部分（ライセンス不明）が入り乱れてしまうので、0から作り直すことでライセンス的に完全に問題のない状態にします
-
-
-## このプロジェクトに貢献できますか？
-
-誰でもissue / pull requestを送って下さい
-
+みたいな時に使って下さい。30秒で上の構成をスタート出来て、github pageで公開するのも自動で出来ます
 
 ## 動かす方法
 
 ```
-$ git clone git@github.com:ookam/omegasisters-overhaul.git
-$ cd /omegasisters-overhaul
+$ git clone git@github.com:ookam/static_homepage.git
+$ cd /static_homepage
 $ yarn install
 $ yarn start
 ```
 
 node + yarnがインストールされていればこれだけで動きます。超簡単
+
+## リポジトリを変更
+
+/package.jsonを開いて下のリポジトリ指定を自分のものに修正して下さい
+
+```
+  "name": "static_homepage",
+  "version": "0.0.1",
+  "repository": "git@github.com:ookam/static_homepage.git",
+```
 
 ## ディレクトリ構成とファイル
 
@@ -113,17 +96,10 @@ node + yarnがインストールされていればこれだけで動きます。
 ## これをgithub pageで公開する方法
 
 1. mainリポジトリにpush or pull request
-2. github actionsにより自動でgh-pages branchが作成される
-3. 自動で公開 https://ookam.github.io/omegasisters-overhaul/ （反映に5分くらいかかる時がある）
+2. github actionsにより自動でgh-pages branchが作成されるのを待つ
+3. （初回のみ）github上の設定からgithubページをgh-pagesブランチで使うという設定を行う
+4. 自動で公開 https://ookam.github.io/static_homepage/ （反映に5分くらいかかる時がある）
 
-## これをcloneして自分のプロジェクトで使いたい
+## このプロジェクトに貢献できますか？
 
-ご自由にどうぞ
-
-/package.jsonを開いて下のリポジトリ指定を修正する&github側でgithub pagesをオンにすればすぐ使えます
-
-```
-  "name": "omegasisters-overhaul",
-  "version": "0.0.1",
-  "repository": "git@github.com:ookam/omegasisters-overhaul.git",
-```
+誰でもissue / pull requestを送って下さい
