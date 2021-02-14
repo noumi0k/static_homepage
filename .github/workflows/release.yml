@@ -1,15 +1,33 @@
 name: when push or pull_request master , auto release
 on:
   push:
-    branches:
-      - master
+    branches: [ $default-branch ]
   pull_request:
-    branches:
-      - master
+    branches: [ $default-branch ]
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      # リリース用に.gitignoreからdistを削除
+      - name: Not ignore dist
+        run: sed -i '/dist*/d' .gitignore
+      # yarnをキャッシュしてくれるやつ
+      - name: Install and Build 🔧
+        uses: bahmutov/npm-install@v1
+        env:
+          NODE_ENV: production
+        run:  |
+          yarn install
+          yarn build
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./dist
