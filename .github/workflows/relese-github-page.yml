@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # リリース用に.gitignoreからdistを削除
-      - name: Not ignore dist
-        run: sed -i '/dist*/d' .gitignore
       # npmをキャッシュしてくれるやつ
       - name: yarn cache
         uses: bahmutov/npm-install@v1
