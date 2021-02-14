@@ -18,13 +18,12 @@ jobs:
       - name: Not ignore dist
         run: sed -i '/dist*/d' .gitignore
       # yarnをキャッシュしてくれるやつ
-      - name: Install and Build 🔧
+      - name: Yarn cache
         uses: bahmutov/npm-install@v1
         env:
           NODE_ENV: production
-        run:  |
-          yarn install
-          yarn build
+      - name: Install and Build 🔧
+        run: yarn build
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v2
         env:
