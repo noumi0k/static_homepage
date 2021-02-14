@@ -31,3 +31,8 @@ https://omegasisters.github.io/homepage
 ## このプロジェクトに貢献できますか？
 
 誰でもpull requestを送って下さい
+
+
+## これは自動デプロイされます
+
+自動デプロイのテスト中……
