@@ -17,11 +17,9 @@ jobs:
       # リリース用に.gitignoreからdistを削除
       - name: Not ignore dist
         run: sed -i '/dist*/d' .gitignore
-      # yarnをキャッシュしてくれるやつ
-      - name: Yarn cache
+      # npmをキャッシュしてくれるやつ
+      - name: yarn cache
         uses: bahmutov/npm-install@v1
-        env:
-          NODE_ENV: production
       - name: Install and Build 🔧
         run: yarn build
       - name: Deploy 🚀
