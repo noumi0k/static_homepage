@@ -17,6 +17,10 @@
   "[scss]": {
     "editor.tabSize": 4,
   },
+  "tailwindCSS.includeLanguages": {
+    "njk": "html",
+  },
+  "tailwindCSS.emmetCompletions": true,
   "cSpell.ignoreRegExpList": [
     "[０-９Ａ-Ｚａ-ｚぁ-んァ-ヶ亜-熙纊-黑]+"
   ],
