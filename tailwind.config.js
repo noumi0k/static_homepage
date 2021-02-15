@@ -5,7 +5,8 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   purge: {
     content: [
-      './app/**/**/*.*',
+      './src/app/**',
+      './src/packs/**',
     ]
   },
   darkMode: false, // or 'media' or 'class',
